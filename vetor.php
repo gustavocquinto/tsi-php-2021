@@ -23,3 +23,5 @@ $semana['sexta'] = 'Saio com a familia';
 foreach ($semana as $nomedia => $oquefaco) {
     echo "Na $nomedia eu $oquefaco <br>";
 }
+
+include 'link.html';
