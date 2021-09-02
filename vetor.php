@@ -6,6 +6,12 @@ $despesas['alimentacao'] = 600.00;
 $despesas['bar'] = 900.00;
 $despesas['educacao'] = 400.00;
 
+$despesas2['0'] = 345.55;
+$despesas2['1'] = 135.00;
+$despesas2['2'] = 600.00;
+$despesas2['3'] = 900.00;
+$despesas2['4'] = 400.00;
+
 /*unset($despesas); SERVE PARA DESTRUIR O VETOR. SERVE PRA TUDO*/
 
 
