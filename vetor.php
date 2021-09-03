@@ -31,3 +31,19 @@ foreach ($semana as $nomedia => $oquefaco) {
 }
 
 include 'link.html';
+
+$gradetsi["segunda"] = 'P.i';
+$gradetsi["terça"] = 'CMS e Direito Digital';
+$gradetsi["quarta"] = 'Banco de Dados';
+$gradetsi["quinta"] = 'Linguagens de servidor';
+$gradetsi["sexta"] = 'Linguagem script para web';
+
+foreach ($gradetsi as $dia => $matéria){
+    echo "A aula de $dia é $matéria <br>";
+}
+
+echo "<pre>"; // serve para nao aplicar a formatação de texto, por exemplo: Sem isso, caso coloque um código de programação, ele não ficará identado e sim tudo em uma única linha. FEIO.
+
+var_dump($gradetsi); //ótimo para depurar o código. Neste caso mostra o array e suas atribuições.
+
+echo "/<pre>"; // Encerra o pre.
