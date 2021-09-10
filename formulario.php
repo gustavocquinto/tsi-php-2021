@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <h1> Disciplina.html <h1>
     <form method="post" action="recebe.php">
         <label for="email"> E-mail </label>
         <input type="email" id="email" name="email" placeholder="jose@silva.com">
