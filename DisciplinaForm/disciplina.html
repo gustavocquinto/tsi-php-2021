@@ -8,16 +8,20 @@
 </head>
 <body>
     <h1> Disciplinas <h1>
-    <form method="post" action="gravaDisciplina.php">
+    <form method="post" action="gravaDisciplinaBD.php">
         <span> Nome da disciplina </span>
-        <input type="text" id="disciplina" name="disciplina">
+        <input type="text" id="nome" name="nome">
+        <br>
         <span> Nome do professor </span>
         <input type="text" name="professor">
+        <br>
         <span> Dia da disciplina </span>
-        <input type="text" name="dia">
+        <input type="date" name="dia">
+        <br>
         <span> Descrição </span>
         <input type="text" name="descricao">
         <input type="submit" value="enviar">
     </form>
+    <a href="recebeComGet.php"> Enviar dados com Get</a>
 </body>
 </html>
