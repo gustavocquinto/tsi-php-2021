@@ -1,0 +1,15 @@
+#css input {
+    display: block;
+
+}
+
+#css {
+    background-color: black;
+    width: 200px;
+    height: 120px;
+    color: white;
+}
+
+#css input:last-child {
+    margin-top: 10px;
+}
