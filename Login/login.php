@@ -2,11 +2,7 @@
 
 session_start();
 //Conectando ao banco
-$bd_bsn = 'mysql:host=localhost;port=3306;dbname=ling_serv';
-$bd_user = 'root';
-$bd_pass = '';
-
-$bd = new PDO ($bd_bsn, $bd_user, $bd_pass);
+require_once('banco/conectaBD.php');
 
 //Preparando a consulta
 

@@ -1,15 +1,6 @@
 <?php
-session_start();
-$bd_bsn = 'mysql:host=localhost;port=3306;dbname=ling_serv';
-$bd_user = 'root';
-$bd_pass = '';
-
-$bd = new PDO ($bd_bsn, $bd_user, $bd_pass);
-
-if( !isset($_SESSION['nome'])){
-    echo 'Usuário não logado';
-    exit();
-}
+require_once('banco/conectaBD.php');
+require_once('sessao/confirmaLogin.php');
 
 $sql = 'SELECT 
             nome, email, id
