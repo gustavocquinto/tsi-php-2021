@@ -3,7 +3,6 @@
 session_start();
 //Conectando ao banco
 require_once('banco/conectaBD.php');
-
 //Preparando a consulta
 
 $stmt = $bd -> prepare('SELECT
@@ -29,6 +28,7 @@ if($registro){
     if (password_verify($_POST['senha'], $registro['senha'])){
         echo '<a href="listarBD.php">Menu</a> <br>';
         $_SESSION['nome'] = $registro['nome'];
+        require_once('imagens.php');
 
         echo '<a href="logout.php"> LogOut</a>';
 

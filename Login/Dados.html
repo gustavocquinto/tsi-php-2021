@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
     <h1> TELA DE LOGIN </h1>
-    <form id="css" action="login.php" method="post">
+    <form id="css" action="login.php" method="post" enctype="multipart/form-data">
         <label for="email">E-mail</label>
         <input type="text" name="email">
         <label for="senha">Senha</label>
         <input type="password" name="senha">
+        <label for="imagem">Escolha sua foto</label>
+        <input type="file" name="imagem">
         <input type="submit" value="Enviar">
+
     </form>
     <!-- <a href="listarBD.php"> Lista de Alunos </a> -->
 </body>
