@@ -13,6 +13,7 @@ $stmt = $bd -> prepare('SELECT
                         email = :email');
 
 //Executando a consulta e pegando retorno dela
+if ($_POST)
 $stmt -> execute([':email' => $_POST['email']]);
 
 //Aqui guardamos na variavel REGISTRO o retorno dessa consulta acima, usando o fetch. O fetch retorna um array com os nomes das colunas...
@@ -28,9 +29,10 @@ if($registro){
     if (password_verify($_POST['senha'], $registro['senha'])){
         echo '<a href="listarBD.php">Menu</a> <br>';
         $_SESSION['nome'] = $registro['nome'];
-        require_once('imagens.php');
+        echo '<a href="listaImagem.php"> Imagens </a> <br>';
+        echo '<a href="logout.php"> LogOut</a><br>';
 
-        echo '<a href="logout.php"> LogOut</a>';
+        require_once('imagens.php');
 
     }
     else{

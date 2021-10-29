@@ -1,16 +1,14 @@
 <?php
 
-$bd_dsn = 'mysql:host=;port=3306;dbname=ling_serv';
-$bd_user = 'root';
-$bd_pass = '';
-
-$bd = new PDO($bd_dsn, $bd_user, $bd_pass);
+require_once('banco/conectaBD.php');
 
 if(mime_content_type($_FILES['imagem']['tmp_name']) == 'image/jpeg'){
 
+    $arquivo = $_FILES['imagem']['tmp_name'];
+    $diretorio = 'arquivosRecebidos/';
+    $novonome = uniqid().'.jpeg';
     $random = rand(1,9999999999);
-    $enviou = move_uploaded_file($_FILES['imagem']['tmp_name'], 
-                                __DIR__ . '/arquivosRecebidos/' . $random . 'userimage.file');
+    move_uploaded_file($arquivo, $diretorio.$novonome);
                           
     $preparando = $bd -> prepare ('INSERT INTO 
                     imagens (usuario, nomearquivo, diretorio)
@@ -19,10 +17,10 @@ if(mime_content_type($_FILES['imagem']['tmp_name']) == 'image/jpeg'){
 
     $valores[':usuario'] = $_POST['email'];
     $valores[':nomearquivo'] = $_FILES['imagem']['name'];
-    $valores[':diretorio'] = '/arquivosRecebidos/' . $random . 'userimage.file';
+    $valores[':diretorio'] = $diretorio.$novonome;
     
     if ($preparando -> execute($valores)){
-        echo 'Imagem enviada para o banco com sucesso';
+        echo 'Imagem enviada para o banco com sucesso <br>';
     }
     else{
         echo 'Algo deu errado';
