@@ -1,6 +1,7 @@
 <?php
 require_once('banco/conectaBD.php');
 require_once('sessao/confirmaLogin.php');
+include('POO/Usuario.class.php');
 
 $sql = 'SELECT 
             nome, email, id
@@ -14,15 +15,8 @@ echo '<form action="apagar.php" method="post">
                 <td> Nome </td> <td> Email </td>
             </tr>';
 
-
-foreach ($bd -> query($sql) as $registro){
-    echo "<tr>
-            <td>{$registro['nome']}</td>
-            <td>{$registro['email']}</td>
-            <td> <button type='submit' name='id' value='{$registro['id']}'> X </button>
-          </tr>  ";
-            
-}
+$obj = new Usuario;
+$obj->listarUser($bd, $sql);
 
 echo '  </table
       </form>';

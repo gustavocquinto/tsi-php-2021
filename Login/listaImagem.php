@@ -1,15 +1,16 @@
 <?php
 
 require_once('banco/conectaBD.php');
-
+include('POO/Usuario.class.php');
 
 $preparando = ('SELECT
-                    diretorio
+                    diretorio, nomearquivo
                 FROM
                     imagens'
 );
 
-foreach($bd -> query($preparando) as $coluna){
-    echo"<img src='{$coluna['diretorio']}'><br>";
-}
+
+$obj = new Usuario;
+$obj->listarImg($bd, $preparando);
+
 

@@ -6,10 +6,26 @@ class Usuario {
     var $idade;
     var $uid;
 
-    function addUser($teste){
-        $this->nome = $teste;
+    function listarUser($bd, $sql) {
+        foreach ($bd -> query($sql) as $registro){
+            echo "<tr>
+                    <td>{$registro['nome']}</td>
+                    <td>{$registro['email']}</td>
+                    <td> <button type='submit' name='id' value='{$registro['id']}'> X </button>
+                  </tr>  ";
+                    
+        }
+    }
 
-        echo 'Testando o ' . $this->nome;
+    function listarImg($bd, $sql) {
+        foreach ($bd -> query($sql) as $registro){
+            echo "<tr>
+                    <td>{$registro['nomearquivo']}</td>
+                    <td><img src='{$registro['diretorio']}'></td>
+                     
+                  </tr>";
+                    
+        }
     }
 
 }
